@@ -1,24 +1,24 @@
-<!doctype html>
-<head>
-  <title>Connect 4</title>
-  <link href="connect4.css" rel="stylesheet">
-</head>
-<body>
-  <h1 class="vectro"><span class="vectro-body">CONNECT</span><span class="vectro-red">I</span><span class="vectro-blue">I</span><span class="vectro-red2">I</span><span class="vectro-blue2">I</span></h1>
-<div id="game">
-  <table id="board"></table>
-</div>
-<h3 id= "playerTurn"></h3>
-<div id="overModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <br>  
-    <p class = "p">GAME OVER!</p>
-    <p class = "p" id="winner"></p>
-    <button type = "button" id = "play">Play Again?!</button>
-  </div>
-<script src="connect4.js"></script>
-
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Memory Game!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="page">
+      <h1>Memory Game!</h1>
+      <div id="currentScore">Score:</div>
+      <div id="game">
+      </div>
+      <div id="overModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>GAME OVER!</p>
+          <p id="score"></p>
+          <button type = "button" id = "play">Play Again?!</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
-
