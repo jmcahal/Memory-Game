@@ -1,0 +1,330 @@
+body{
+  background-color: black;
+}
+
+#game {
+  display: block;
+}
+
+
+/* game board table */
+
+#board td {
+  width: 70px;
+  height: 70px;
+  border: solid 1px #666;
+  
+}
+
+#board {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.p1{
+  background-color: blue;
+}
+.p2{
+  background-color: red;
+}
+
+.piece {
+  /* TODO: make into circles */
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+
+/* TODO: make pieces red/blue,  depending on player 1/2 piece */
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px lightgray;
+}
+
+#column-top td:hover {
+  border-radius: 50%;
+}
+
+#title {
+  text-align: center;
+}
+
+
+
+.vectro {
+  position: relative;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.1px #f1f1f1;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 160px;
+  margin: 150px 0 50px 0;
+  text-align: center;
+}
+
+.vectro:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /*-webkit-animation:vectro_effect 0.067s infinite;*/
+  /* background: repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, rgba(255,255,255,0) 1px, rgba(255,255,255,0) 2px); */
+}
+
+
+
+.windows .vectro {
+  -webkit-text-stroke: 4px #f1f1f1;
+}
+
+.vectro-body {
+  -webkit-background-clip: text;
+  background-image: -webkit-linear-gradient(#C3BFB4 0%, #FDFCFA 50%, #E8E7E5 51%, #757172 52%, #E8E9DB 100%);
+  -webkit-filter: drop-shadow(2px 2px 15px #3F59F4);
+}
+
+.vectro-red {
+  color: #F10C20;
+  -webkit-text-fill-color: #F10C20;
+  -webkit-text-stroke: 0;
+  -webkit-filter: drop-shadow(2px 2px 15px #F10C20);
+  font-style: italic;
+  padding-right: 20px;
+}
+
+.windows .vectro-red {
+  padding-right: 30px;
+}
+
+.vectro-blue2 {
+  color: #3F59F4;
+  -webkit-text-fill-color: #3F59F4;
+  -webkit-filter: drop-shadow(2px 2px 15px #3F59F4);
+  -webkit-text-stroke: 0;
+  font-style: italic;
+  padding-right: 20px;
+  margin-left: -20px;
+}
+
+.windows .vectro-blue2 {
+  padding-right: 30px;
+  margin-left: -30px;
+}
+
+.vectro-red2 {
+  color: #F10C20;
+  -webkit-text-fill-color: #F10C20;
+  -webkit-filter: drop-shadow(2px 2px 15px #F10C20);
+  -webkit-text-stroke: 0;
+  font-style: italic;
+  padding-right: 20px;
+  margin-left: -20px;
+}
+
+.windows .vectro-red2 {
+  padding-right: 30px;
+  margin-left: -30px;
+}
+
+.vectro-blue {
+  color: #3F59F4;
+  -webkit-text-fill-color: #3F59F4;
+  -webkit-filter: drop-shadow(2px 2px 15px #3F59F4);
+  -webkit-text-stroke: 0;
+  font-style: italic;
+  padding-right: 20px;
+  margin-left: -20px;
+}
+
+.windows .vectro-blue {
+  padding-right: 30px;
+  margin-left: -30px;
+}
+
+
+/* animation */
+
+.fall1 {
+  animation-name: fall-animation1;
+  animation-duration: 500ms;
+}
+
+@keyframes fall-animation1 {
+  from {
+    transform: translateY(-420px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fall2 {
+  animation-name: fall-animation2;
+  animation-duration: 500ms;
+}
+
+@keyframes fall-animation2 {
+  from {
+    transform: translateY(-350px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fall3 {
+  animation-name: fall-animation3;
+  animation-duration: 500ms;
+}
+
+@keyframes fall-animation3 {
+  from {
+    transform: translateY(-280px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fall4 {
+  animation-name: fall-animation4;
+  animation-duration: 500ms;
+}
+
+@keyframes fall-animation4 {
+  from {
+    transform: translateY(-210px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fall5 {
+  animation-name: fall-animation5;
+  animation-duration: 500ms;
+}
+
+@keyframes fall-animation5 {
+  from {
+    transform: translateY(-140px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fall6 {
+  animation-name: fall-animation6;
+  animation-duration: 500ms;
+}
+
+@keyframes fall-animation6 {
+  from {
+    transform: translateY(-70px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: black;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  display: block;
+
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#start{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.1px #f1f1f1;
+  font-size: 40px;
+  text-align: center;
+  -webkit-background-clip: text;
+  background-image: -webkit-linear-gradient(#C3BFB4 0%, #FDFCFA 50%, #E8E7E5 51%, #757172 52%, #E8E9DB 100%);
+  -webkit-filter: drop-shadow(2px 2px 15px #3F59F4);
+}
+
+p{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.1px #f1f1f1;
+  font-size: 40px;
+  text-align: center;
+  -webkit-background-clip: text;
+  background-image: -webkit-linear-gradient(#C3BFB4 0%, #FDFCFA 50%, #E8E7E5 51%, #757172 52%, #E8E9DB 100%);
+  -webkit-filter: drop-shadow(2px 2px 15px #3F59F4);
+}
+
+#play {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.1px #f1f1f1;
+  font-size: 40px;
+  text-align: center;
+  -webkit-background-clip: text;
+  background-image: -webkit-linear-gradient(#C3BFB4 0%, #FDFCFA 50%, #E8E7E5 51%, #757172 52%, #E8E9DB 100%);
+  -webkit-filter: drop-shadow(2px 2px 15px #3F59F4);
+}
+
+#playerTurn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.1px #f1f1f1;
+  font-size: 40px;
+  text-align: center;
+  -webkit-background-clip: text;
+  background-image: -webkit-linear-gradient(#C3BFB4 0%, #FDFCFA 50%, #E8E7E5 51%, #757172 52%, #E8E9DB 100%);
+  -webkit-filter: drop-shadow(2px 2px 15px #3F59F4);
+}
